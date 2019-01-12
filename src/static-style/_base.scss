@@ -1,0 +1,178 @@
+@import "media";
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 0.5;
+}
+
+*:-moz-placeholder {
+	color: #666;
+	opacity: 0.5;
+}
+
+*::-moz-placeholder {
+	color: #666;
+	opacity: 0.5;
+}
+
+*:-ms-input-placeholder {
+	color: #666;
+}
+
+input::-ms-clear {
+	height: 0;
+	width: 0;
+	display: none;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	border: none;
+}
+
+body input:required:valid,
+body textarea:required:valid {
+	border: none;
+}
+body input,
+body textarea{
+	border: none;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	min-width: 320px;
+	position: relative;
+	line-height: 1.75;
+	letter-spacing: 0.6px;
+	margin: 0;
+	transition: 0.3s;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+#app {
+  font-family: $font-gt, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #fff;
+  
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  @include min-screen(992px){
+  	width: 954px;
+  } 
+  @include screen(769px, 991px){
+  	width: 720px;
+  }
+  @include screen(576px, 768px){
+  	width: 540px;
+  }
+  @include max-screen(576px){
+  	width: 100%;
+  }
+}
+
+
+.bg-base{
+	background-color: $base-cl;
+}
+
+//Layout
+.flex-row{
+	display: flex;
+	&--ai-c{
+		align-items: center;
+	}
+	&--jcsb{
+		justify-content: space-between;
+	}
+	&--fxdc-xs{
+		@include max-screen(480px){
+			flex-direction: column;
+		}
+	}
+	&--wrapp-md{
+		@include screen(768px, 992px){
+			flex-wrap: wrap;
+		}
+	}
+	&--wrapp-sm{
+		@include screen(480px, 767px){
+			flex-wrap: wrap;
+		}
+	}
+	&--wrapp-xs{
+		@include max-screen(480px){
+			flex-wrap: wrap;
+		}
+	}
+} 
+
+//class for hidden elements
+.hidden{
+	display: none;
+	&--xl{
+		@include min-screen(992px){
+			display: none!important;
+		}
+	}
+	&--md{
+		@include screen(768px, 991px){
+			display: none;
+		}
+	}
+	&--sm{
+		@include screen(480px, 767px){
+			display: none;
+		}
+	}
+	&--xs{
+		@include max-screen(480px){
+			display: none;
+		}
+	}
+}
+
+.ff-book{
+	font-family: $font-gtb;
+}
