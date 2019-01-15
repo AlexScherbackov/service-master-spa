@@ -74,7 +74,7 @@ a {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fff;
-  
+  height: 100%;
 }
 
 h1, h2 {
@@ -104,10 +104,13 @@ li {
   @include screen(769px, 991px){
   	width: 720px;
   }
-  @include screen(576px, 768px){
+  @include screen(577px, 768px){
   	width: 540px;
   }
-  @include max-screen(576px){
+  @include screen(480px, 576px){
+  	width: 470px;
+  }
+  @include max-screen(480px){
   	width: 100%;
   }
 }
@@ -171,6 +174,10 @@ li {
 			display: none;
 		}
 	}
+}
+
+.d-none{
+	display: none;
 }
 
 .ff-book{

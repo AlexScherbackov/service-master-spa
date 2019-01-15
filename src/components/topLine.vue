@@ -8,7 +8,7 @@
 				<a class="top-line__link"><i class="fab fa-youtube top-line__icon"></i></a>
 				<a class="top-line__link"><i class="fab fa-linkedin-in top-line__icon"></i></a>
 			</div>
-			<ul class="top-line__nav menu-list hidden--md hidden--sm  hidden--xs">
+			<ul class="top-line__nav menu-list flex-row flex-row--ai-c flex-row--jcsb hidden--md hidden--sm  hidden--xs">
 				<li class="menu-list__item">
 					<a class="menu-list__link">Home</a>
 				</li>
@@ -56,6 +56,7 @@
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
+
 	&__social{
 		@media screen and (max-width: 480px){
 			margin-bottom: 10px;

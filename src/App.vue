@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <top-line class="bg-base""></top-line>
-    <header-top></header-top>
+    <main-header></main-header>
   </div>
 </template>
 
 <script>
-import topLine from './components/topLine.vue';
-import headerTop from './components/headerTop.vue';
+  import mainHeader from './components/mainHeader.vue';
 
 export default {
   name: 'app',
-  components:{
-    'top-line': topLine,
-    headerTop
+  components: {
+    mainHeader
   },
   data () {
     return {
@@ -29,7 +26,6 @@ export default {
 @import './static-style/_fonts.scss';
 @import './static-style/_base.scss'; 
 @import './static-style/_forms.scss';
-
 
 @import './assets/fonts/@fortawesome/fontawesome-free/css/all.min.css';
 
