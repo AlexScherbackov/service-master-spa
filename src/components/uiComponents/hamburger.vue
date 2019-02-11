@@ -4,7 +4,7 @@
 	</div>
 </template>
 <script>
-	import {toggle} from '../mixins/toggle.js';
+	import {toggle} from '../../mixins/toggle.js';
 
 	export default {
 		mixins: [toggle],
@@ -29,7 +29,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		z-index: 120;
+		z-index: 1001;
 		&__item{
 			width: 100%;
 			height: 4px;

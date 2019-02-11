@@ -6,9 +6,9 @@
 	</header>
 </template>
 <script>
-	import topLine from './topLine.vue';
-	import headerTop from './headerTop.vue';
-	import mainMenu from './mainMenu.vue';
+	import topLine from '../uiComponents/topLine.vue';
+	import headerTop from '../uiComponents/headerTop.vue';
+	import mainMenu from '../uiComponents/mainMenu.vue';
 
 	export default {
 		components:{

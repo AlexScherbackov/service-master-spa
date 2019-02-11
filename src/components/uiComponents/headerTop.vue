@@ -1,17 +1,27 @@
 <template>
 	<div class="header-top">
 		<div class="container header-top__wrapper" >
-			<img class="header-top__logo" src="../assets/image/header-logo.png" />
-			<div class="header-top__block header-top__block--prev-order header-top__block--yellow header-top__block--js-c-xs">
-				<a class="header-top__link" href="tel:773-376-1110">
-					<span><i class="fa fa-phone header-top__icon" aria-hidden="true"></i> 773-376-1110</span>
-				</a>
-			</div>
-			<div class="header-top__block header-top__block--js-e header-top__block--js-s-xs">
-				<a class="header-top__link header-top__link--type2 ff-book" href="#">
-					need urgent help?
-				</a>
-			</div>
+			<img class="header-top__logo" src="../../assets/image/header-logo.png" />
+			<btn 
+				:link="'tel:773-376-1110'"
+				:size-modif="'medium'"
+				:background="'transparent'" 
+				:border-color="'yellow'"
+				class="header-top__block header-top__block--prev-order header-top__block--js-c-xs header-top__link"
+			>	
+				<span><i class="fa fa-phone header-top__icon" aria-hidden="true"></i> 773-376-1110</span>
+			</btn>
+			<btn 
+				class="header-top__block header-top__block--js-e header-top__block--js-s-xs ff-book" 
+
+				:link="'#'" 
+				:background="'transparent'" 
+				:text="'need urgent help?'" 
+				:font-size-modif="'small'"
+				:size-modif="'medium'"
+			/>
+			
+			
 			<hamburger @hamburger-click="hamburgerClickHandler" class="hidden--xl header-top__hamburger"></hamburger>
 			<mobile-menu :class="{'d-none': !mobileMenuTrigger}"></mobile-menu>
 		</div>
@@ -19,12 +29,14 @@
 </template>
 <script>
 	import hamburger from './hamburger.vue';
-	import mobileMenu from './mobileMenu.vue';
+	import mobileMenu from '../responsive/mobileMenu.vue';
+	import btn from '../interfaceComponents/button.vue';
 
 	export default {
 		components: {
 			hamburger,
-			mobileMenu
+			mobileMenu,
+			btn
 		},
 		data(){
 			return{
@@ -45,7 +57,7 @@
 </script>
 <style lang="scss" scoped>
 	.header-top{
-		@media screen and(max-width: 992px){
+		@media screen and(max-width: 991px){
 			padding: 10px 0;
 		}
 		&__wrapper{
@@ -56,7 +68,7 @@
 			align-items: center;
 			min-height: 100px;
 			box-sizing: border-box;
-			@media screen and (min-width: 480px) and (max-width: 992px){
+			@media screen and (min-width: 480px) and (max-width: 991px){
 				grid-template-columns: repeat(2,  1fr);
 				grid-template-areas: 
 					'logo hamburger'
@@ -77,7 +89,7 @@
 		&__logo{
 			justify-self: center;
 			grid-area: logo;
-			@media screen and (min-width: 481px) and (max-width: 992px){
+			@media screen and (min-width: 481px) and (max-width: 991px){
 				justify-self: start;
 			}
 			
@@ -85,25 +97,9 @@
 		&__hamburger{
 			grid-area: hamburger;
 			justify-self: end;
-			@media screen and (max-width: 480px){
-				justify-self: end;
-			}
 		}
 		&__block{
-			height: 45px;
-			max-width: 240px;
-			width: 100%;
-			border: 2px solid #000;
 			grid-area: lastBlock;
-			@media screen and(max-width: 576px){
-				max-width: 200px;
-			}
-			&--yellow{
-				border-color: #f7e74d;
-				@media screen and(max-width: 480px){
-					max-width: 290px;
-				}
-			}
 			&--prev-order{
 				grid-area: prevBlock;
 			}
@@ -122,23 +118,10 @@
 			}
 		}		
 		&__link{
-			display: block;
-			color: #000;
-			font-size: 18px;
-			line-height: 45px;
-			letter-spacing: 1.5px;
-			text-align: center;
 			&:hover{
 				text-decoration: none;
 			}
-			&--type2{
-				font-size: 16px;
-				font-weight: 400;
-				text-transform: uppercase;
-				@media screen and(max-width: 576px){
-					font-size: 12px;
-				}
-			}
+			
 		}
 		&__icon{
 			transform: rotate(90deg);

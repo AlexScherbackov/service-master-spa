@@ -1,12 +1,12 @@
 export const toggle = {
 	data(){
 		return {
-			isActive: false
+			$_isActive: false
 		}
 	},
 	methods: {
 		toggleActive(){
-			this.isActive = !this.isActive;
+			this.$_isActive = !this.$_isActive;
 		}
 	}
 }

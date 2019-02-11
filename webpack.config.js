@@ -67,6 +67,7 @@ module.exports = {
           name: '[name].[ext]?[hash]'
         }
       },
+      
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{

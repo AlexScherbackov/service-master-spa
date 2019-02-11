@@ -39,9 +39,10 @@ body textarea{
 }
 html,
 body {
-	height: 100%;
-	width: 100%;
-	overflow-x: hidden;
+/* 	height: 100%;
+width: 100vw;
+overflow-x: hidden;
+box-sizing: border-box; */
 }
 
 body {
@@ -75,6 +76,7 @@ a {
   text-align: center;
   color: #fff;
   height: 100%;
+  position: relative;
 }
 
 h1, h2 {
@@ -82,7 +84,6 @@ h1, h2 {
 }
 
 ul {
-  list-style-type: none;
   padding: 0;
 }
 
@@ -120,14 +121,43 @@ li {
 	background-color: $base-cl;
 }
 
+.bg-acent{
+	background-color: $acent-cl;
+}
+
+.bg-acent-hover{
+	&:hover{
+		background-color: $acent-hover-cl;
+	}
+}
+
 //Layout
 .flex-row{
 	display: flex;
 	&--ai-c{
 		align-items: center;
 	}
+	&--ai-fs{
+		align-items: flex-start;
+	}
 	&--jcsb{
 		justify-content: space-between;
+	}
+	&--jcc{
+		justify-content: center;
+	}
+	&--fxdc{
+		flex-direction: column;
+	}
+	&--fxdc-md{
+		@include screen(768px, 992px){
+			flex-direction: column;
+		}
+	}
+	&--fxdc-sm{
+		@include screen(480px, 767px){
+			flex-direction: column;
+		}
 	}
 	&--fxdc-xs{
 		@include max-screen(480px){
@@ -177,9 +207,85 @@ li {
 }
 
 .d-none{
-	display: none;
+	display: none!important;
 }
 
 .ff-book{
 	font-family: $font-gtb;
 }
+
+
+.ff-din{
+	font-family: $font-din;
+}
+
+
+.base-section{
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	padding: 63px 10px 35px;
+	overflow: hidden;
+}
+
+//class for title
+.base-title{
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 0 auto;
+	font-family: $font-din;
+	color: $base-cl;
+	font-size: 48px;
+	line-height: 52px;
+	font-weight: 700;
+	text-transform: uppercase;
+	@media screen and (max-width: 480px){
+		font-size: 40px!important;
+		line-height: 44px!important;
+	}
+	@media screen and (max-width: 390px){
+		font-size: 32px!important;
+		line-height: 38px!important;
+	}
+	&--without-margin{
+		margin: 0;
+	}
+	&--fz-54{
+		font-size: 54px;
+		line-height: 58px;
+	}
+	&--fz-40{
+		font-size: 40px;
+		line-height: 55px;
+	}
+	&--line-over{
+		position: relative;
+		&:before{
+			content: '';
+			display: block;
+			position: absolute;
+			width: 60px;
+			height: 3px;
+			background-color: #000;
+			top: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+
+.margin{
+	&__top{
+		&--5{
+			margin-top: 5px;
+		}
+		&--10{
+			margin-top: 10px;
+		}
+		&--20{
+			margin-top: 20px;
+		}
+	}
+}
+

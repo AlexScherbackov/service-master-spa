@@ -44,7 +44,7 @@
 
 // config.json - для редактирования шрифта иконок http://fontello.com/
 
-@font-face {
+/* @font-face {
   font-family: 'fontello';
   src: url('./assets/fonts/fontello/fontello.eot?52670969');
   src: url('./assets/fonts/fontello/fontello.eot?52670969#iefix') format('embedded-opentype'),
@@ -55,8 +55,8 @@
   font-weight: normal;
   font-style: normal;
 }
-
-
+ */
+/* 
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
@@ -68,31 +68,89 @@
   width: 1em;
   margin-right: .2em;
   text-align: center;
-  /* opacity: .8; */
+  opacity: .8;
  
-  /* For safety - reset parent styles, that can break glyph codes*/
+  For safety - reset parent styles, that can break glyph codes
   font-variant: normal;
   text-transform: none;
  
-  /* fix buttons height, for twitter bootstrap */
+  fix buttons height, for twitter bootstrap
   line-height: 1em;
  
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
+  Animation center compensation - margins should be symmetric
+  remove if not needed
   margin-left: .2em;
  
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
+  you can be more comfortable with increased icons size
+  font-size: 120%;
  
-  /* Font smoothing. That was taken from TWBS */
+  Font smoothing. That was taken from TWBS
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
  
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-}
+  Uncomment for 3D effect
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+} */
  
 .icon-icon-5:before { content: '\e804'; } /* '' */
 
+  @font-face {
+      font-family: "PFDinCondensedRegular";
+      src: url("./assets/fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot");
+      src: url("./assets/fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot?#iefix")format("embedded-opentype"),
+      url("./assets/fonts/PFDinCondensedRegular/PFDinCondensedRegular.woff") format("woff"),
+      url("./assets/fonts/PFDinCondensedRegular/PFDinCondensedRegular.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }
 
+  @font-face {
+      font-family: "PFDinCondensedMedium";
+      src: url("./assets/fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot");
+      src: url("./assets/fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot?#iefix")format("embedded-opentype"),
+      url("./assets/fonts/PFDinCondensedMedium/PFDinCondensedMedium.woff") format("woff"),
+      url("./assets/fonts/PFDinCondensedMedium/PFDinCondensedMedium.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }
+
+  @font-face {
+      font-family: "PFDinCondensedLight";
+      src: url("./assets/fonts/PFDinCondensedLight/PFDinCondensedLight.eot");
+      src: url("./assets/fonts/PFDinCondensedLight/PFDinCondensedLight.eot?#iefix")format("embedded-opentype"),
+      url("./assets/fonts/PFDinCondensedLight/PFDinCondensedLight.woff") format("woff"),
+      url("./assets/fonts/PFDinCondensedLight/PFDinCondensedLight.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }
+
+  @font-face {
+      font-family: "PFDinCondensedThin";
+      src: url("./assets/fonts/PFDinCondensedThin/PFDinCondensedThin.eot");
+      src: url("./assets/fonts/PFDinCondensedThin/PFDinCondensedThin.eot?#iefix")format("embedded-opentype"),
+      url("./assets/fonts/PFDinCondensedThin/PFDinCondensedThin.woff") format("woff"),
+      url("./assets/fonts/PFDinCondensedThin/PFDinCondensedThin.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }
+
+  @font-face {
+      font-family: "PFDinCondensedLightItalic";
+      src: url("./assets/fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot");
+      src: url("./assets/fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot?#iefix")format("embedded-opentype"),
+      url("./assets/fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.woff") format("woff"),
+      url("./assets/fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }
+
+  @font-face {
+      font-family: "PFDinCondensedThinItalic";
+      src: url("./assets/fonts/PFDinCondensedThinItalic/PFDinCondensedThinItalic.eot");
+      src: url("./assets/fonts/PFDinCondensedThinItalic/PFDinCondensedThinItalic.eot?#iefix")format("embedded-opentype"),
+      url("./assets/fonts/PFDinCondensedThinItalic/PFDinCondensedThinItalic.woff") format("woff"),
+      url("./assets/fonts/PFDinCondensedThinItalic/PFDinCondensedThinItalic.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }
 
