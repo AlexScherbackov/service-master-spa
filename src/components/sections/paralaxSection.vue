@@ -2,7 +2,7 @@
 	<section class="paralax-section">
 		<div class="paralax-section__wrapper flex-row flex-row--ai-fs flex-row--jcsb flex-row--fxdc-sm flex-row--fxdc-xs">
 			<div class="paralax-section__content">
-				<h3 class="base-title base-title--fz-54 base-title--without-margin paralax-section__title">Chicago Service Area</h3>
+				<h1 class="base-title base-title--max480fz40 base-title--max390fz32 base-title--fz-54 base-title--without-margin paralax-section__title">Chicago Service Area</h1>
 				<div class="paralax-section__description ff-book">
 					<p>We provide cleaning and restoration services for several neighborhoods and towns in the Chicago Area. We have the knowledge and experience to provide top quality service for your home or business. No matter the size and scope of the project, we’re here to help.</p>
 					<btn 

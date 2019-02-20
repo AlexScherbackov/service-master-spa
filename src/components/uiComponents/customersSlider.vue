@@ -28,7 +28,7 @@
 		},
 		data(){
 			return {
-				autoplay: false,
+				autoplay: true,
 				height: '380px',
 				width: '100%'
 			}

@@ -8,26 +8,28 @@
 				<a class="top-line__link"><i class="fab fa-youtube top-line__icon"></i></a>
 				<a class="top-line__link"><i class="fab fa-linkedin-in top-line__icon"></i></a>
 			</div>
-			<ul class="top-line__nav menu-list flex-row flex-row--ai-c flex-row--jcsb hidden--md hidden--sm  hidden--xs">
-				<li class="menu-list__item">
-					<a class="menu-list__link">Home</a>
-				</li>
-				<li class="menu-list__item">
-					<a class="menu-list__link">About us</a>
-				</li>
-				<li class="menu-list__item">
-					<a class="menu-list__link">Special offers</a>
-				</li>
-				<li class="menu-list__item">
-					<a class="menu-list__link">What's new</a>
-				</li>
-				<li class="menu-list__item">
-					<a class="menu-list__link">FAQ</a>
-				</li>
-				<li class="menu-list__item">
-					<a class="menu-list__link">Gallery</a>
-				</li>
-			</ul>
+			<nav>
+				<ul class="top-line__nav menu-list flex-row flex-row--ai-c flex-row--jcsb hidden--md hidden--sm  hidden--xs">
+					<li class="menu-list__item">
+						<router-link :to="{name: 'home'}"" class="menu-list__link">Home</router-link>
+					</li>
+					<li class="menu-list__item">
+						<router-link :to="{name: 'aboutUs'}" class="menu-list__link">About us</router-link>
+					</li>
+					<li class="menu-list__item">
+						<a class="menu-list__link">Special offers</a>
+					</li>
+					<li class="menu-list__item">
+						<a class="menu-list__link">What's new</a>
+					</li>
+					<li class="menu-list__item">
+						<a class="menu-list__link">FAQ</a>
+					</li>
+					<li class="menu-list__item">
+						<a class="menu-list__link">Gallery</a>
+					</li>
+				</ul>
+			</nav>
 			<search-form></search-form>
 
 		</div>

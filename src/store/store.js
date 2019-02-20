@@ -5,6 +5,8 @@ import {navigation} from './module/navigation.js';
 import {customers} from './module/customers.js';
 import {blogposts} from './module/blogpost.js';
 import {footerMenu} from './module/footerMenu.js';
+import {contactService} from './module/contactService.js';
+import {servicemasterGoverment} from './module/servicemasterGoverment.js';
 
 Vue.use(Vuex);
 
@@ -14,7 +16,9 @@ export default new Vuex.Store({
 		navigation: navigation,
 		customers: customers,
 		blogposts: blogposts,
-		footerMenu: footerMenu
+		footerMenu: footerMenu,
+		contactService: contactService,
+		servicemasterGoverment: servicemasterGoverment
 	},
 	state: {
 		

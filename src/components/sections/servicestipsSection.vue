@@ -1,9 +1,9 @@
 <template>
-	<section class="services-tips base-section">
+	<section class="services-tips base-section base-section--max576-pad40px0">
 		<div class="container services-tips__wrapper">
 			<div class="services  ">
 				<div class="services__wrapper">
-					<div class="base-title base-title--line-over base-title--fz-40">services</div>
+					<div class="base-title base-title--line-over base-title--fz-40 base-title--max390fz32">services</div>
 					<slider 
 					:animation="'normal'" 
 					:autoplay="true" 
@@ -14,7 +14,7 @@
 					>
 					<template slot="slide" slot-scope="slotProps">
 						<div class="services-slide">
-							<h4 class="services-slide__title">{{slotProps.item.title}}</h4>
+							<h2 class="services-slide__title">{{slotProps.item.title}}</h2>
 							<p class="services-slide__text ff-book">{{truncatedString(slotProps.item.description, tuncatedLength)}}</p>
 							<a v-if="slotProps.item.description.length > tuncatedLength" :href="slotProps.item.description.link" class="services-slide__link">Learn more</a>
 						</div>
@@ -24,7 +24,7 @@
 		</div>
 		<div class="tips">
 			<div class="tips__wrapper">
-				<div class="base-title base-title--line-over base-title--fz-40">news and tips</div>
+				<div class="base-title base-title--line-over base-title--fz-40 base-title--max390fz32">news and tips</div>
 				<h4 class="tips__title">{{blogpost.title}}</h4>
 				<p class="tips__text">{{blogpost.date.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}}</p>
 				<p class="tips__text">

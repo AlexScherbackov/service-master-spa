@@ -1,7 +1,7 @@
 <template>
-	<section class="base-section">
+	<section class="base-section base-section--max576-pad40px0">
 		<div class="container">
-			<h2 class="base-title">Our happy customers</h2>
+			<h1 class="base-title base-title--max480fz40 base-title--max390fz32">Our happy customers</h1>
 			<div v-if="width >= 769" class="customer__wrapper margin__top--20">
 				<customer-card  v-for="(card, index) in customers" :key="index" :name="card.name" :logo="card.logo" :rating="card.rating" :stars="card.stars" :text="card.text" class="customer__item" />
 			</div>

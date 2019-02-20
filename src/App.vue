@@ -1,12 +1,7 @@
 <template>
   <div id="app">
     <main-header/>
-    <head-slider :width="responsive.width"/>
-    <why-servicemaster /> 
-    <paralax-section />
-    <customerSection :width="responsive.width"/>
-    <paralaxBackground />
-    <service-tips :width="responsive.width" />
+    <router-view :width="responsive.width"/>
     <main-footer />
     <fixed-form />
   </div>
@@ -14,27 +9,15 @@
 
 <script>
   import mainHeader from './components/sections/mainHeader.vue';
-  import headSliderSection from './components/sections/headSliderSection.vue'
-  import whyServicemaster from './components/sections/whyServicemaster.vue';
-  import paralaxSection from './components/sections/paralaxSection.vue';
-  import customerSection from './components/sections/customerSection.vue';
-  import paralaxBackground from './components/sections/paralaxBakground.vue';
-  import servicestipsSection from './components/sections/servicestipsSection.vue';
   import mainFooter from './components/sections/mainFooter.vue';
   import fixedContactForms from './components/uiComponents/fixedContactForms.vue';
-
+ 
   export default {
     name: 'app',
     components: {
       mainHeader,
-      'head-slider': headSliderSection,
-      'why-servicemaster':whyServicemaster,
-      paralaxSection,
-      customerSection,
-      paralaxBackground,
-     'service-tips': servicestipsSection,
       mainFooter,
-      'fixed-form': fixedContactForms
+     'fixed-form': fixedContactForms
     },
     data () {
       return {
@@ -50,7 +33,7 @@
     },
     mounted(){
       this.responsive.width = this.$el.clientWidth;
-      window.addEventListener('resize', this.handleResize)
+      window.addEventListener('resize', this.handleResize);
     }
   }
 </script>

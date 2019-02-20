@@ -154,3 +154,12 @@
       font-weight: normal;
   }
 
+  @font-face {
+      font-family: "SFNS";
+      src: url("./assets/fonts/SFNS/sfns-display.eot");
+      src: url("./assets/fonts/SFNS/sfns-display.eot?#iefix")format("embedded-opentype"),
+      url("./assets/fonts/SFNS/sfns_display.woff") format("woff"),
+      url("./assets/fonts/SFNS/sfns-display.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }

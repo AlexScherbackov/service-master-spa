@@ -1,11 +1,11 @@
 <template>
-	<section class="base-section">
+	<section class="base-section base-section--max576-pad20px0">
 		<div class="container">
-			<h2 class="base-title">Why servicemaster</h2>
+			<h1 class="base-title base-title--max480fz40 base-title--max390fz32">Why servicemaster</h1>
 			<p class="why__subtitle">ServiceMaster Chicago provides professional Water Damage Restoration, Fire & Smoke Damage Restoration and Specialty Cleaning services in Chicago, IL and surrounding areas</p>	
 			<div class="why__content flex-row flex-row--jcsb flex-row--fxdc-md flex-row--fxdc-sm flex-row--fxdc-xs">
 				<div class="why__box">
-					<h3 class="why__title">Lorem ipsum dolor sit</h3>
+					<h2 class="why__title">Lorem ipsum dolor sit</h2>
 					<ul class="why__list">
 						<li class="why__list-item">Lorem ipsum dolor sit amet</li>
 						<li class="why__list-item">Lorem ipsum dolor sit amet</li>

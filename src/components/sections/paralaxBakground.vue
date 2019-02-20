@@ -1,7 +1,7 @@
 <template>
 	<section class="base-section section-paralax">
 		<div class="container flex-row flex-row--fxdc">
-			<h3 class="base-title section-paralax__title">Don't know what to do next? We do.</h3>
+			<h1 class="base-title section-paralax__title">Don't know what to do next? We do.</h1>
 			<btn :link="'#'" :background="'yellow'" :fontSizeModif="'medium'" :text="'get help now'" :sizeModif="'medium'" :letterSpacingmodif="'big'" class="margin__top--20 ff-book section-paralax__btn"/>
 		</div>
 	</section>
