@@ -30,7 +30,7 @@
 					</li>
 				</ul>
 			</nav>
-			<search-form></search-form>
+			<search-form class="top-line__searchform" :border="true"></search-form>
 
 		</div>
 	</div>
@@ -75,6 +75,9 @@
 		@media screen and (max-width: 480px){
 			text-align: center;
 		}
+	}
+	&__searchform{
+		font-size: 11px;
 	}
 }
 

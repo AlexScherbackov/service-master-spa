@@ -25,17 +25,11 @@
 		<div class="tips">
 			<div class="tips__wrapper">
 				<div class="base-title base-title--line-over base-title--fz-40 base-title--max390fz32">news and tips</div>
-				<h4 class="tips__title">{{blogpost.title}}</h4>
-				<p class="tips__text">{{blogpost.date.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}}</p>
-				<p class="tips__text">
-					{{truncatedString(this.blogpost.text, 107)}}
-					<a v-if="this.blogpost.text.length > 107" class="tips__link" href="">Learn more</a>
-				</p>
+				<tidings :blogpost="blogpost"/>
 				<btn :link="'#'" :background="'transparent'" 
-				:sizeModif="'large'" :fontSizeModif="'small'"
-				:borderColor="'black'" :text="'see all blog posts'"
-				class="ff-book tips__btn"
-				/>
+					:sizeModif="'large'" :fontSizeModif="'small'"
+					:borderColor="'black'" :text="'see all blog posts'"
+					class="ff-book tips__btn" />
 			</div>
 		</div>
 	</div>
@@ -44,14 +38,16 @@
 <script>
 	import btn from '../interfaceComponents/button.vue';
 	import slider from '../interfaceComponents/slider.vue';
+	import {truncatedString} from '../../mixins/truncatedStrimg.js';
+	import tidings from '../uiComponents/tidings.vue';
 
 	import {mapGetters} from 'vuex';
-	import {truncatedString} from '../../mixins/truncatedStrimg.js';
 
 	export default {
 		components:{
 			btn,
-			slider
+			slider,
+			tidings
 		},
 		mixins:[truncatedString],
 		props: {
@@ -123,11 +119,10 @@
 			}
 		}
 		& .slider-btn, & .slider-btn:hover{
-			background: none;
-
+			background: none!important;
 			& .slider-icon{
 				color: #000;
-				border-color: #000;
+				border-color: #000!important;
 				border-width: 3px;
 			}
 			&.slider-btn-left{
@@ -208,28 +203,6 @@
 		@media screen and (max-width: 768px){
 			justify-content: center;
 		}
-	}
-	&__title{
-		font-size: 14px;
-		line-height: 20px;
-		text-align: left;
-		font-weight: 400;
-		margin: 20px 0 0;
-		@media screen and (max-width: 768px){
-			text-align: center;
-		}
-	}
-	&__text{
-		font-size: 12px;
-		line-height: 20px;
-		text-align: left;
-		margin: 6px 0;
-		@media screen and (max-width: 768px){
-			text-align: center;
-		}
-	}
-	&__link{
-		color: #000;
 	}
 	&__btn{
 		margin-top: 25px;

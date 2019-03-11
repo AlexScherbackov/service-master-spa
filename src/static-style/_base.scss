@@ -18,6 +18,10 @@
 	color: #666;
 }
 
+*{
+	box-sizing: border-box;
+}
+
 input::-ms-clear {
 	height: 0;
 	width: 0;
@@ -37,13 +41,7 @@ body input,
 body textarea{
 	border: none;
 }
-html,
-body {
-/* 	height: 100%;
-width: 100vw;
-overflow-x: hidden;
-box-sizing: border-box; */
-}
+
 
 body {
 	min-width: 320px;
@@ -135,6 +133,14 @@ li {
 	background-color: $gray-cl;
 }
 
+.bg-black{
+	background-color: #000;
+}
+
+.texc-color-acent{
+	color: $acent-cl!important;
+}
+
 //Layout
 .flex-row{
 	display: flex;
@@ -224,16 +230,19 @@ li {
 }
 
 .ff-book{
-	font-family: $font-gtb;
+	font-family: $font-gtb!important;
 }
 
+.ff-gotham-light{
+	font-family: $font-gt-light!important;
+}
 
 .ff-din{
-	font-family: $font-din;
+	font-family: $font-din!important;
 }
 
 .ff-sfns{
-	font-family: $font-sfns;
+	font-family: $font-sfns!important;
 }
 
 //classes for sections
@@ -301,9 +310,13 @@ li {
 		font-size: 28px;
 		line-height: 55px;
 	}
+	&--fz-24{
+		font-size: 24px;
+		line-height: 28px;
+	}
 	&--fz-16{
 		font-size: 16px;
-		line-height: 29px;
+		line-height: 25px;
 	}
 	&--fz-14{
 		font-size: 14px;
@@ -357,6 +370,9 @@ li {
 		&--20{
 			margin-top: 20px;
 		}
+		&--25{
+			margin-top: 25px;
+		}
 	}
 	&__bottom{
 		&--5{
@@ -370,6 +386,9 @@ li {
 		}
 		&--20{
 			margin-bottom: 20px;
+		}
+		&--55{
+			margin-bottom: 55px;
 		}
 	}
 }

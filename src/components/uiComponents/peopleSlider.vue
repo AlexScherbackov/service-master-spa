@@ -59,7 +59,7 @@
 		}
 	}
 	& .slider-indicator-active{
-		background-color: #000;
+		background-color: #000!important;
 	}
 }
 	

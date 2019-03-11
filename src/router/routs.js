@@ -1,5 +1,6 @@
 import indexPage from '../components/pages/indexPage.vue';
 import aboutUs from '../components/pages/aboutUs.vue';
+import blogPage from '../components/pages/blogPage.vue';
 
 export const routes = [
 	{
@@ -11,6 +12,11 @@ export const routes = [
 		path: '/about-us',
 		name: 'aboutUs',
 		component: aboutUs	
+	},
+	{
+		path: '/blog',
+		name: 'blog',
+		component: blogPage	
 	}
 ]
 

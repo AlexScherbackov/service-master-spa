@@ -1,11 +1,16 @@
 <template>
-	<form id="searchform" class="top-line__searchform searchform" @submit.prevent="submit">
-		<input class="searchform__control" placeholder="Search" v-model.trim="searchdata"></input>
+	<form id="searchform" class="searchform"  @submit.prevent="submit">
+		<input class="searchform__control" :class="{'searchform__control--border': border}" placeholder="Search" v-model.trim="searchdata"></input>
 		<button class="searchform__submit"><i class="fas fa-search"></i></button>
 	</form>
 </template>
 <script>
 	export default{
+		props:{
+			border: {
+				type: Boolean
+			},
+		},
 		data(){
 			return{
 				searchdata: ''
@@ -30,8 +35,7 @@
 		padding-bottom: 5px;
 		background-color: transparent;
 		color: #fff;
-		font-size: 11px;
-		border-bottom: 1px solid white;
+		font-size: inherit;
 		outline: none;
 		&::-webkit-input-placeholder {color:#fafafa; opacity: 1;}
 		&::-moz-placeholder {color:#fefefe; opacity: 1;}
@@ -40,11 +44,14 @@
 		&:hover, &:focus{
 			outline: none;
 		};
+		&--border{
+			border-bottom: 1px solid white;
+		}
 	}
 	&__submit{
 		position: absolute;
 		top: 2.5px;
-		right: 0;
+		right: 2.5px;
 		cursor: pointer;
 		background-color: transparent;
 		border: none;

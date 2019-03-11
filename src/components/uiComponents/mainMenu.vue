@@ -14,7 +14,8 @@
 					<div class="container">
 						<ul class="megamenu">
 							<li v-for="subItem in item.subNavs" class="megamenu__item">
-								<a class="megamenu__link" href="">{{subItem.name}}</a>
+								<router-link :to="{name: item.link}" class="megamenu__link" >{{subItem.name}}</router-link>
+								
 							</li>
 						</ul>
 					</div>

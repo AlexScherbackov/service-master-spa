@@ -343,7 +343,7 @@ const navigation = {
 		},
 		blog:{
 			name: 'blog',
-			link: '#'
+			link: 'blog'
 		},
 		contact_us: {
 			name: 'contact us',

@@ -7,6 +7,8 @@ import {blogposts} from './module/blogpost.js';
 import {footerMenu} from './module/footerMenu.js';
 import {contactService} from './module/contactService.js';
 import {servicemasterGoverment} from './module/servicemasterGoverment.js';
+import {comments} from './module/comments.js';
+import {categories} from './module/postCategories.js';
 
 Vue.use(Vuex);
 
@@ -18,7 +20,9 @@ export default new Vuex.Store({
 		blogposts: blogposts,
 		footerMenu: footerMenu,
 		contactService: contactService,
-		servicemasterGoverment: servicemasterGoverment
+		servicemasterGoverment: servicemasterGoverment,
+		comments: comments,
+		categories: categories
 	},
 	state: {
 		
@@ -30,3 +34,4 @@ export default new Vuex.Store({
 		 
 	}
 })
+
