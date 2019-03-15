@@ -1,9 +1,9 @@
 const categories = {
 	state: [
-		{
+		/*{
 			id: 1,
 			title: 'Fire Damage Cleanup'
-		},
+		},*/
 		{
 			id: 2,
 			title: 'Interview'
@@ -36,6 +36,9 @@ const categories = {
 	getters: {
 		categories: state => {
 			return state;
+		},
+		categorie: state => id => {
+			return state.find(post => post.id == id)
 		}
 	}
 }

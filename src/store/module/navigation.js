@@ -347,7 +347,7 @@ const navigation = {
 		},
 		contact_us: {
 			name: 'contact us',
-			link: 'https://www.google.com'
+			link: 'contactUs'
 		}
 
 	},

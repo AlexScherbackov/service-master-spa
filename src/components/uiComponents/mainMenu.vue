@@ -3,27 +3,34 @@
 		<div class="container main-menu__wrapper">
 			<ul class="flex-row flex-row--ai-c flex-row--jcsb main-menu__list">
 				<li v-for="item in navigation" class="main-menu__item">
-					<a 
+					
+					<router-link 
+					v-if="item.link"
+					:to="{name: item.link}"
 					class="main-menu__link" 
-					:href="item.link ? item.link : null"
-					@click="item.subNavs ? showMegamenu($event) : null"
 					>
 					{{item.name}}
-				</a>
-				<div v-if="item.subNavs" class="main-menu__submenu d-none">
-					<div class="container">
-						<ul class="megamenu">
-							<li v-for="subItem in item.subNavs" class="megamenu__item">
-								<router-link :to="{name: item.link}" class="megamenu__link" >{{subItem.name}}</router-link>
-								
-							</li>
-						</ul>
-					</div>
+				</router-link>
+				<a v-else 
+				:href="item.link" 
+				class="main-menu__link" 
+				@click="item.subNavs ? showMegamenu($event) : null">
+				{{item.name}}	
+			</a>
+			<div v-if="item.subNavs" class="main-menu__submenu d-none">
+				<div class="container">
+					<ul class="megamenu">
+						<li v-for="subItem in item.subNavs" class="megamenu__item">
+							<router-link :to="{name: item.link}" class="megamenu__link" >{{subItem.name}}</router-link>
 
+						</li>
+					</ul>
 				</div>
-			</li>
-		</ul>
-	</div>
+
+			</div>
+		</li>
+	</ul>
+</div>
 </div>
 </template>
 <script>

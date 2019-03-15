@@ -5,7 +5,7 @@ const blogposts = {
 			title: 'Top Tips for Preventing Basement Seepage',
 			date: new Date(2018, 11, 21),
 			theme: 8,
-			poster: './src/assets/image/blogposts/blog-5.jpeg',
+			poster: '/src/assets/image/blogposts/blog-5.jpeg',
 			text: 'Even though it may not feel like it to a homeowner experiencing water damage in the lower level of their home, leaking basements are common occurrences in homes throughout the country. After all, any type of foundation can spring a leak, especially as the weather continues to worsen throughout this holiday season.',
 			html: ` 
 				<p class="blogpost__article">Leaky basements experience something called basement seepage, which is when water finds ways to enter your basement and pool on your floor, causing it to flood and damage your property.</p>
@@ -32,7 +32,7 @@ const blogposts = {
 			title: 'Chris Bailey/Farmers Insurance: Our Featured Small Business of the Month',
 			date: new Date(2019, 0, 27),
 			theme: 2,
-			poster: './src/assets/image/blogposts/blog-4.jpg',
+			poster: '/src/assets/image/blogposts/blog-4.jpg',
 			text: 'The team at ServiceMaster Restoration by Simons is thrilled to announce that our featured small business owner for January is Chris Bailey of Farmers Insurance. Congratulations, Chris! You are a great role model for aspiring business owners. Check out our interview with Chris below.',
 			html: ` 
 				<p class="blogpost__article"><strong>What is your business?</strong></p>
@@ -60,7 +60,7 @@ const blogposts = {
 			title: '3 Ways the Cold Affects Your Home',
 			date: new Date(2019, 0, 29),
 			theme: 7,
-			poster: './src/assets/image/blogposts/blog-3.jpg',
+			poster: '/src/assets/image/blogposts/blog-3.jpg',
 			text: 'So far, 2017 is cold. The new year has brought unusual, life-threatening freezing temperatures. And with pre-wind chill temperatures dropping well below zero this week, it’s important to keep in mind what kind of negative effects frigid weather can have on homes and buildings. ',
 			html: ` 
 				<p class="blogpost__article">While here at ServiceMaster Restoration by Simons, we believe life safety should always be the number one concern, bracing your home for the cold is a close second. Here are just three ways the cold can damage your home this winter:</p>
@@ -87,7 +87,7 @@ const blogposts = {
 			title: 'ServiceMaster Restoration By Simons’ Ultimate Guide to Frozen and Burst Pipes',
 			date: new Date(2019, 1, 11),
 			theme: 6,
-			poster: './src/assets/image/blogposts/blog-2.jpeg',
+			poster: '/src/assets/image/blogposts/blog-2.jpeg',
 			text: 'Man, has it been cold outside recently. With temperatures dropping well below zero in the past few weeks, residents in the Chicagoland area are facing major threats to home safety with frozen and burst pipes. When temperatures fall below zero degrees, pipes are incredibly vulnerable and cause incredible home damage. Since they can quickly turn into a very expensive problem for homeowners, the professionals at ServiceMaster Restoration by Simons have created this guide to give you a crash course in Pipe Freezing 101. Read on to learn how to prevent pipes from freezing, how to thaw pipes if they do freeze, and what to do if frozen pipes end up bursting and causing vast water damage to your home.',
 			html: ` 
 				<h2 class="blogpost__title">How to Prevent Pipes from Freezing</h2>
@@ -126,7 +126,7 @@ const blogposts = {
 			title: 'Your Number One Guide to Oven Safety',
 			date: new Date(2019, 1, 21),
 			theme: 5,
-			poster: './src/assets/image/blogposts/blog-1.jpg',
+			poster: '/src/assets/image/blogposts/blog-1.jpg',
 			text: 'Some of the most dangerous items in your house are the very ones that you would least suspect — like your oven! Even though you might use your oven and stove regularly, without the proper precautions and maintenance this kitchen appliance can quickly become dangerous. Oven incidents can cause kitchen fires, which lead to smoke and soot…and the need for kitchen restoration after the fact.',
 			html: ` 
 				<p class="blogpost__article">Too many times, families see kitchen safety as reactionary — that is, they wait until after an incident has occured to focus on clearing and restoring the smoke and fire damage. Instead, we challenge you to be proactive in your approach to kitchen safety and especially oven safety. Here are our top tips to help mitigate risks associated with your kitchen’s oven:</p>
@@ -152,7 +152,7 @@ const blogposts = {
 			title: 'What Do I Do With All This Junk: Estate Cleaning Made Easy',
 			date: new Date(2019, 2, 1),
 			theme: 4,
-			poster: './src/assets/image/blogposts/blog-6.jpg',
+			poster: '/src/assets/image/blogposts/blog-6.jpg',
 			text: 'There is no pain in the world that compares to losing a loved one. Not only must you deal with their loss, but oftentimes you may also be left to deal with their remaining belongings. The loss of a loved one is something you can rarely plan for, meaning the sudden stress that comes with dealing with what your loved one left behind is often too much to bear. What do you do with all of their personal items? Do you donate it all? Do you keep some things and not others? How do you evaluate the value of each item?',
 			html: ` 
 				<p class="blogpost__article">The healing and cleaning process in the aftermath of any death is not just time consuming, but potentially even confusing since the process often involves the assistance of attorneys and tax specialists.</p>
@@ -182,7 +182,7 @@ const blogposts = {
 			title: 'Does Your Building Project Budget for Post-Construction Cleaning Costs? Here’s Why It Should.',
 			date: new Date(2019, 2, 3),
 			theme: 3,
-			poster: './src/assets/image/blogposts/blog-7.jpeg',
+			poster: '/src/assets/image/blogposts/blog-7.jpeg',
 			text: 'If you’re planning a residential or commercial construction project and you’re not already thinking about a plan for clean up afterwards, you should be. The professionals at ServiceMaster Restoration by Simons have decades of experience in cleaning up after construction projects. You’d be surprised how often we find that customers have forgotten to budget for or schedule a post-construction cleaning until the very last minute.',
 			html: ` 
 				<p class="blogpost__article">The problem is, customers don’t realize that post-construction cleaning is an important part of any building project. They don’t understand that post-construction cleanups are some of the most important projects a restoration company will take on. These kinds of jobs usually require a company’s entire crew to be onsite for anywhere between a few days to a whole week depending on whether it is a residential or commercial project.</p>
@@ -214,6 +214,9 @@ const blogposts = {
 		recentPosts: state => {
 			const today = new Date();
 			return state.filter(item => item.date.getMonth() == today.getMonth());
+		},
+		blogpost: state => id => {
+			return state.find(post => post.id == id)
 		}
 	}
 }

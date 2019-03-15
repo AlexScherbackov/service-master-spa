@@ -5,14 +5,14 @@
 			<span class="post__mark ff-din">blog</span>
 		</div>
 		<div class="post__content">
-			<h2 :class="'base-title--fz-'+ titleFzModif" class="base-title  base-title--fw-400 ff-gotham post__title">{{post.title}}</h2>
+			<router-link :to="'/blog/'+post.id":class="'base-title--fz-'+ titleFzModif" class="base-title  base-title--fw-400 ff-gotham post__title">{{post.title}}</router-link>
 			<span class="post__text post__date  ff-book margin__top--15">
 				{{post.date.toLocaleString("en-US", { year: 'numeric', month: 'long', day: 'numeric'})}}
 			</span>
-			<a class="post__theme">{{postCategie(post.theme).title}}</a>
+			<a class="post__theme">{{categorie(post.theme).title}}</a>
 			<p class="post__text ff-book">
 				{{truncatedString(post.text, 150)}}
-				<a v-if="post.text.length > 150" class="post__link ff-gotham">Read more</a>
+				<router-link :to="'/blog/'+post.id" v-if="post.text.length > 150" class="post__link ff-gotham">Read more</router-link>
 			</p>
 		</div>
 	</div>
@@ -33,16 +33,8 @@
 			}
 		},
 		computed: {
-			...mapGetters(['categories']),
-		},
-		methods: {
-			postCategie(cat){
-				return this.categories.find(item => {
-					return item.id == cat ? true: false;
-				})
-				
-			}
-		} 
+			...mapGetters(['categorie']),
+		}
 }
 </script>
 <style lang="scss" scoped>

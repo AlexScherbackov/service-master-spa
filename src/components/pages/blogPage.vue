@@ -4,11 +4,11 @@
 			<h1 class="base-title base-title--max390fz32 base-title--fz-40 base-title--line-under margin__top--20 margin__bottom--55 blog__title">blog</h1>
 			<main class="blog__content blog-content">
 				<blog-post :post="blogpost" :titleFzModif="'16'" class="blog-content__main-post main-post" />
-				<div class="blog__wrapper margin__top--20">
+				<div v-if="blogpostSortedByDate.length > 0" class="blog__wrapper margin__top--20">
 					<blog-post v-for="item in blogpostSortedByDate" :key="item.id" :post="item" :titleFzModif="'14'" class="blog__item"/>
 				</div>
 			</main>
-			<blog-sidebar :recentPosts="recentPosts" :archive="archive" class="blog__sidebar">
+			<blog-sidebar class="blog__sidebar">
 				<search-form class="blog__searchform margin__top--5 margin__bottom--5" />
 			</blog-sidebar>
 		</div>
@@ -31,39 +31,31 @@
 		},
 		data(){
 			return{
-
+			
 			}
 		},
 		computed: {
-			...mapGetters(['blogposts', 'recentPosts']),
+			...mapGetters(['blogposts']),
 			blogpostSortedByDate(){
-				let blogposts = this.blogposts.slice(0, this.blogposts.length -1);
+				let blogposts = this.postsToShow.length > 1 ? this.postsToShow.slice(0, this.blogposts.length - 1) : [];
+
 				return blogposts.sort((a,b)=>{
 					return a.date > b.date ? -1 : 1;
 				}
 				);
 			},
 			blogpost(){
-				return this.blogposts[this.blogposts.length - 1];
+				return this.postsToShow[this.postsToShow.length - 1];
 			},
-			archive(){
-				let archive = {};
+			postsToShow(){
+				let postsToShow;
 				
-				this.blogposts.forEach( item => {
-					const hasYear = !archive.hasOwnProperty(item.date.getFullYear());
-					const year = item.date.getFullYear();
-					const month = item.date.toLocaleString('en-us', { month: "long" });
-
-					if(hasYear){
-						let monthes = [];
-						monthes.push(month);
-						Object.defineProperty(archive, year, {enumerable: true, value: monthes });
-					} else if(!archive[year].includes(month)) {
-						archive[year].push(month);
-					}
-				})
-				
-				return archive;
+				if(this.$route.name == 'blog'){
+					postsToShow = this.blogposts;
+				} else if(this.$route.name == 'postPerCategorie'){
+					postsToShow = this.blogposts.filter(item => item.theme == this.$route.params.id)
+				}
+				return postsToShow;
 			}
 		},
 	}

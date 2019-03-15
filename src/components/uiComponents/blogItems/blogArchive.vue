@@ -1,6 +1,6 @@
 <template>
 	<ul >
-		<li v-for="item in years" :class="classObject.submenuItem" :key="item.name">
+		<li v-for="item in $data" :class="classObject.submenuItem" :key="item.name">
 			<a 
 				:class="classObject.archiveLink" 
 				@click.prevent="trigerMenu" 
@@ -8,18 +8,23 @@
 				{{item.name}}
 			</a>
 		
-			<transition name="fade">
-				<ul :class="classObject.archiveList" >
+			<collapse-transition>
+				<ul v-if="$data[item.name].value" :class="classObject.archiveList" >
 					<li v-for="elem in archive[item.name]" :class="classObject.archiveItem" :key="elem"> 
 						{{elem}}
 					</li>
 				</ul>
-			</transition>
+			</collapse-transition>
 		</li>
 	</ul>
 </template>
 <script>
+	import { CollapseTransition } from 'vue2-transitions';
+
 	export default {
+		components: {
+			CollapseTransition
+		},
 		props: {
 		archive: {
 			type: Object,
@@ -40,15 +45,17 @@
 			Object.defineProperty(years, item, {enumerable: true, value: {name:item, value: false}})
 		});
 		return {
-			years:years
+			...years
 		};
 
+	},
+	computed:{
+		
 	},
 	methods: {
 		trigerMenu(event){
 			const param = event.target.dataset.name;
-			this.years[param].value = !this.years[param].value; 
-			console.log(this.$data)
+			this[param].value = !this[param].value; 
 		} 
 	}
 }

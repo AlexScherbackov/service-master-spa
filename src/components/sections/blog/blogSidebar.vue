@@ -6,7 +6,7 @@
 				<li  class="sidebar__menu-item">
 					<div class="sidebar__menu-item-title"><span class="base-title base-title--fz-24 base-title--line-over">Recent Posts</span></div>
 					<ul  class="sidebar__submenu">
-						<li v-for="item in recentPosts" class="sidebar__submenu-item ff-book">{{item.title}}</li>
+						<li v-for="item in recentPosts" ><router-link :to="'/blog/'+item.id" class="sidebar__submenu-item ff-book">{{item.title}}</router-link></li>
 					</ul>
 				</li>
 				<li  class="sidebar__menu-item">
@@ -18,7 +18,7 @@
 				<li  class="sidebar__menu-item">
 					<div class="sidebar__menu-item-title"><span class="base-title base-title--fz-24 base-title--line-over">Categories</span></div>
 					<ul  class="sidebar__submenu">
-						<li v-for="item in categories" class="sidebar__submenu-item ff-book">{{item.title}}</li>
+						<li v-for="item in categories" ><router-link :to="{name:'postPerCategorie', params:{id: item.id}}" class="sidebar__submenu-item ff-book" >{{item.title}}</router-link></li>
 					</ul>
 				</li>
 				<li  class="sidebar__menu-item">
@@ -29,6 +29,7 @@
 						submenuItem: 'sidebar__submenu-item sidebar__submenu-item--m0 sidebar__submenu-item--bd-10', 
 						submenu: 'sidebar__submenu', 
 						archiveLink: 'archive__link'}"/> 
+						
 				</li>
 			</ul>
 		</div>
@@ -38,24 +39,36 @@
 	import {mapGetters} from 'vuex';
 	import {truncatedString} from '../../../mixins/truncatedStrimg.js';
 	import blogArchive from '../../uiComponents/blogItems/blogArchive.vue';
-
+	import acordion from '../../uiComponents/accordion.vue';
 	export default {
 		mixins: [truncatedString],
 		components: {
-			blogArchive
+			blogArchive,
+			acordion
 		},
-		props: {
-			recentPosts: {
-				type: Array,
-				required: true
-			},
-			archive: {
-				type: Object,
-				required: true
-			}
-		},
+
 		computed: {
-			...mapGetters(['comments', 'categories']),
+			...mapGetters(['blogposts', 'recentPosts', 'comments', 'categories']),
+		
+			archive(){
+				let archive = {};
+				
+				this.blogposts.forEach( item => {
+					const hasYear = !archive.hasOwnProperty(item.date.getFullYear());
+					const year = item.date.getFullYear();
+					const month = item.date.toLocaleString('en-us', { month: "long" });
+
+					if(hasYear){
+						let monthes = [];
+						monthes.push(month);
+						Object.defineProperty(archive, year, {enumerable: true, value: monthes });
+					} else if(!archive[year].includes(month)) {
+						archive[year].push(month);
+					}
+				})
+				
+				return archive;
+			},
 			recentComments(){
 				return this.comments.filter(item => {
 					return this.recentPosts.find((element)=>{
@@ -96,6 +109,9 @@
 	}
 	&__submenu{
 		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
 	}
 	&__submenu-item{
 		display: block;
@@ -116,6 +132,7 @@
 		}
 		&:hover{
 			color: #ffee50;
+			text-decoration: none;
 			& > span{
 				color: #fff;
 			}
