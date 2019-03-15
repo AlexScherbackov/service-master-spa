@@ -29,7 +29,7 @@
 						submenuItem: 'sidebar__submenu-item sidebar__submenu-item--m0 sidebar__submenu-item--bd-10', 
 						submenu: 'sidebar__submenu', 
 						archiveLink: 'archive__link'}"/> 
-						
+
 				</li>
 			</ul>
 		</div>
@@ -39,12 +39,11 @@
 	import {mapGetters} from 'vuex';
 	import {truncatedString} from '../../../mixins/truncatedStrimg.js';
 	import blogArchive from '../../uiComponents/blogItems/blogArchive.vue';
-	import acordion from '../../uiComponents/accordion.vue';
+	
 	export default {
 		mixins: [truncatedString],
 		components: {
 			blogArchive,
-			acordion
 		},
 
 		computed: {
