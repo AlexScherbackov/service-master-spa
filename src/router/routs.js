@@ -2,7 +2,7 @@ import indexPage from '../components/pages/indexPage.vue';
 import aboutUs from '../components/pages/aboutUs.vue';
 import blogPage from '../components/pages/blogPage.vue';
 import article from '../components/pages/article.vue';
-
+import contactUs from '../components/pages/contactUs.vue';
 export const routes = [
 	{
 		path: '/',
@@ -32,7 +32,7 @@ export const routes = [
 	{
 		path: '/contactUs',
 		name: 'contactUs',
-		component: blogPage
+		component: contactUs
 	}
 ]
 

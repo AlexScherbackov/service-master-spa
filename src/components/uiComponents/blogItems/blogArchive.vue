@@ -2,7 +2,7 @@
 	<ul >
 		<li v-for="item in $data" :class="classObject.submenuItem" :key="item.name">
 			<a 
-				:class="classObject.archiveLink" 
+				:class="[classObject.archiveLink, $data[item.name].value ? 'active' : '']"  
 				@click.prevent="trigerMenu" 
 				:data-name="item.name">
 				{{item.name}}
@@ -56,7 +56,7 @@
 		trigerMenu(event){
 			const param = event.target.dataset.name;
 			this[param].value = !this[param].value; 
-		} 
+		}
 	}
 }
 

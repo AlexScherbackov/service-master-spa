@@ -167,6 +167,12 @@
 			height: 2px;
 			background-color: #fff;
 			right: 25px;
+			transition: all ease 0.4s;
+		}
+		&.active{
+			&:after, &:before{
+				transform: rotate(0deg);
+			}
 		}
 		&:before{
 			top: 50%;

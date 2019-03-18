@@ -75,8 +75,10 @@
 <script>
 
 	import {mapActions} from 'vuex';
+	import {userDataFormValidation} from '../../mixins/userDataFormValidation.js';
 
 	export default {
+		mixins: [userDataFormValidation],
 		data(){
 			return {
 				displayData: {
@@ -84,29 +86,9 @@
 					form: false
 				},
 				formData: {
-					userName: '',
-					userSurname: '',
-					userPhone: '',
-					userEmail: '',
 					problem: ''
 				},
 				validation:{
-					userName: {
-						regExp: /^[a-zA-Z]{1,}$/,
-						value: true
-					},
-					userSurname: {
-						regExp: /^[a-zA-Z]{1,}$/,
-						value: true
-					},
-					userPhone: {
-						regExp: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
-						value: true
-					},
-					userEmail: {
-						regExp: /.+@.+\..+/i,
-						value: true
-					},
 					problem: {
 						regExp: /^[A-Za-z0-9\s]{1,}$/,
 						value: true
@@ -136,13 +118,6 @@
 					!this.formData[key] ? (result = false) : '';
 				}
 				return result;
-			},
-			checkValide(prop){
-				this.validation[prop].value = this.validation[prop].regExp.test(this.formData[prop]);
-			},
-			validClear(e){
-				const elem = e.target;
-				elem.classList.contains('no-valid') ? elem.classList.remove('no-valid') : '';
 			}
 		}
 	}

@@ -265,6 +265,9 @@ li {
 			padding: 20px 0;
 		}
 	}
+	&--bd-top{
+		border-top: 2px solid #333;
+	}
 	&--bd-top-xl{
 		@include min-screen(992px){
 			border-top: 2px solid #333;
